@@ -29,3 +29,7 @@ mensajeBytes = mensaje.encode()
 msj_cifrado = cipher_suite.encrypt(mensajeBytes)
 print("Mensaje enviado:\n", mensaje)
 
+#Preparamos los datos de la conexion
+TCP_IP = '127.0.0.1'
+TCP_PORT = 5005
+BUFFER_SIZE = 2048 #Cantidad de info que se queda en memoria
