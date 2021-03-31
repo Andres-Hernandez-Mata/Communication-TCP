@@ -25,4 +25,7 @@ file.close()
 mensaje = params.msj
 mensajeBytes = mensaje.encode()
 
+#Ciframos el mensaje
+msj_cifrado = cipher_suite.encrypt(mensajeBytes)
+print("Mensaje enviado:\n", mensaje)
 
