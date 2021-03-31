@@ -21,3 +21,14 @@ while True:
     conn.send(b"Enterado. Bye!")
     break
 conn.close()
+
+#Generar el objeto para cifrar
+file = open('clave.key','rb')
+clave = file.read()
+file.close()
+cipher_suite = Fernet(clave)
+
+mensajeBytes = cipher_suite.decrypt(mss_cifrado, None)
+mensaje = mensajeBytes.decode()
+print("Mensaje recibido:\n". mensaje)
+
