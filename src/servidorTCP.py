@@ -16,3 +16,8 @@ params = parser.parse_args()
 clave = Fernet.generate_key()
 cipher_suite = Fernet(clave)
 
+#Almacenamos la clave
+file - open('clave.key', 'wb') #Se guarda en bytes wb
+file.write(clave)
+file.close()
+
