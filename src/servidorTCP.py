@@ -12,3 +12,7 @@ parser = argparse.ArgumentParser(description='Port scanning', epilog=description
 parser.add_argument("-msj", metavar='MSJ', dest="msj", help="mensaje a enviar", required=True)
 params = parser.parse_args()
 
+#Generar el objeto para cifrar
+clave = Fernet.generate_key()
+cipher_suite = Fernet(clave)
+
