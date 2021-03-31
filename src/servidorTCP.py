@@ -33,3 +33,13 @@ print("Mensaje enviado:\n", mensaje)
 TCP_IP = '127.0.0.1'
 TCP_PORT = 5005
 BUFFER_SIZE = 2048 #Cantidad de info que se queda en memoria
+
+#Establecemos la conexion
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect((TCP_IP, TCP_PORT))
+s.send(msj_cifrado)
+respuesta = s.recv(BUFFER_SIZE).decode()
+s.close()
+
+print("Respuesta recibida: ", respuesta)
+
