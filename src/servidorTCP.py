@@ -21,3 +21,8 @@ file - open('clave.key', 'wb') #Se guarda en bytes wb
 file.write(clave)
 file.close()
 
+#Tomar el argumento, convertirlo a bytes
+mensaje = params.msj
+mensajeBytes = mensaje.encode()
+
+
