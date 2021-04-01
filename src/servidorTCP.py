@@ -28,5 +28,5 @@ cipher_suite = Fernet(clave)
 
 mensajeBytes = cipher_suite.decrypt(msj_cifrado, None)
 mensaje = mensajeBytes.decode()
-print("Mensaje recibido:\n". mensaje)
+print("Mensaje recibido:\n", mensaje)
 
