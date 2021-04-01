@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import argparse
 import socket
 from cryptography.fernet import Fernet
@@ -17,7 +15,7 @@ s.listen(1)
 (conn, addr) = s.accept()
 print('Direccion de conexion: ', addr)
 while True:
-    mss_cifrado = conn.recv(BUFFER_SIZE)
+    msj_cifrado = conn.recv(BUFFER_SIZE)
     conn.send(b"Enterado. Bye!")
     break
 conn.close()
@@ -28,7 +26,7 @@ clave = file.read()
 file.close()
 cipher_suite = Fernet(clave)
 
-mensajeBytes = cipher_suite.decrypt(mss_cifrado, None)
+mensajeBytes = cipher_suite.decrypt(msj_cifrado, None)
 mensaje = mensajeBytes.decode()
 print("Mensaje recibido:\n". mensaje)
 
